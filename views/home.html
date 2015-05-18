@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Catch | Phrase</title>
+    <!-- Necessary requirements: jQuery, Underscore, Bootstrap, and linked JS/stylesheets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="/underscore/underscore.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+    <script type="text/javascript" src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+    <link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+
+<body>
+    <!-- The jumboton header -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1> Lets Play Catchphrase!</h1>
+            <button type="button" class="btn btn-xs btn-info" data-toggle="collapse" data-target="#instr">How to play</button>
+            <div id="instr" class="collapse">
+                <p>Enter a word, along with its associated definition. Add or delete words as needed. Good luck!
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <form id="newPhrase">
+                    <div class="form-group title">
+                        <input type="text" name="phrase[word]" class="form-control" placeholder="Word">
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="3" name="phrase[description]" class="form-control" placeholder="Description"></textarea>
+                    </div>
+                    <button class="btn btn-md btn-info btn-block">Add Phrase</button>
+                </form>
+            </div>
+        </div>
+        <div id="phraseHold" class="">
+        </div>
+    </div>
+    <script type="text/template" id="phraseTemp">
+        <div class="phraseCon row">
+            <div class="col-md-12">
+                <div class="phrase">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <%= word %>
+                        </div>
+                        <div class="panel-body">
+                            <%= description %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button class="delete btn btn-xs btn-danger">Delete Entry</button>
+            </div>
+        </div>
+    </script>
+</body>
+
+</html>
